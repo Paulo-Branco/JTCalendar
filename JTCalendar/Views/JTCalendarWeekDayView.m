@@ -78,7 +78,7 @@
     
     for(NSInteger i = 0; i < days.count; ++i){
         NSString *day = days[i];
-        [days replaceObjectAtIndex:i withObject:[day uppercaseString]];
+        [days replaceObjectAtIndex:i withObject:[day capitalizedString]];
     }
     
     // Redorder days for be conform to calendar
@@ -95,7 +95,7 @@
     
     for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
         UILabel *label =  _dayViews[i];
-        label.text = days[i];
+        [label setAttributedText:[[NSAttributedString alloc] initWithString:days[i] attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:12.5], NSForegroundColorAttributeName : [UIColor blackColor]}]];
     }
 }
 

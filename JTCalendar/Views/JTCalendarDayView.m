@@ -114,7 +114,7 @@
         [dateFormatter setDateFormat:@"dd"];
     }
     
-    _textLabel.text = [dateFormatter stringFromDate:_date];
+    [_textLabel setAttributedText:[[NSAttributedString alloc] initWithString:[dateFormatter stringFromDate:_date] attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.5], NSForegroundColorAttributeName : [UIColor whiteColor]}]];
         
     [_manager.delegateManager prepareDayView:self];
 }
